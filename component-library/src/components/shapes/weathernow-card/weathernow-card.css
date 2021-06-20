@@ -1,5 +1,12 @@
-div {
-  background-color: var(--blue);
+div.card {
+  background-color: #ffffff;
+  height: 350px;
+  width: 350px;
+  margin: 16px;
+  transition: width 0.6s, height 0.6s;
+}
+
+div.card.active {
   height: 400px;
   width: 400px;
 }

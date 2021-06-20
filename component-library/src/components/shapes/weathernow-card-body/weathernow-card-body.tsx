@@ -6,7 +6,7 @@ import { Component, Host, h, Prop } from '@stencil/core';
   shadow: true,
 })
 export class WeathernowCardBody {
-  @Prop() test: string;
+  @Prop() readonly test: string;
 
   render() {
     return (
