@@ -1,0 +1,6 @@
+{
+  "src/**/*.+(js|json|ts|tsx|d.ts|d.spec.ts|d.e2e.ts)": [
+    "eslint --fix",
+    "npm test"
+  ]
+}

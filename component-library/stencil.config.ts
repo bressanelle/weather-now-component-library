@@ -1,4 +1,5 @@
 import { Config } from '@stencil/core';
+import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'component-library',
@@ -6,6 +7,7 @@ export const config: Config = {
     port: 3737,
     openBrowser: false,
   },
+  plugins: [sass()],
   outputTargets: [
     {
       type: 'dist',
