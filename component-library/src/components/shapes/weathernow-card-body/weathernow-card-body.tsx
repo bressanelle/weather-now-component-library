@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'weathernow-card-body',
@@ -6,6 +6,7 @@ import { Component, Host, h } from '@stencil/core';
   shadow: true,
 })
 export class WeathernowCardBody {
+  @Prop() test: string;
 
   render() {
     return (
@@ -14,5 +15,4 @@ export class WeathernowCardBody {
       </Host>
     );
   }
-
 }
