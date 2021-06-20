@@ -22,15 +22,15 @@
     "generate": "stencil generate",
     "lint": "eslint --fix 'src/**/*.+(js|json|ts|tsx|d.ts|d.spec.ts|d.e2e.ts)'",
     "pre-commit": "lint-staged",
-    "prepare": "husky install"
+    "prepare": "cd .. && husky install"
   },
   "dependencies": {
-    "@commitlint/cli": "^12.1.4",
-    "@commitlint/config-conventional": "^12.1.4",
     "@stencil/core": "^2.0.1"
   },
   "license": "MIT",
   "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
     "@stencil/eslint-plugin": "^0.3.1",
     "@stencil/sass": "^1.4.1",
     "@types/jest": "^26.0.23",
