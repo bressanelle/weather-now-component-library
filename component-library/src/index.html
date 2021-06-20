@@ -3,13 +3,45 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
+    <title>Weather Now Component Library</title>
 
     <script type="module" src="/build/component-library.esm.js"></script>
     <script nomodule src="/build/component-library.js"></script>
     <link rel="stylesheet" href="/build/component-library.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   </head>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    .wrapper {
+      background: black;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    div.cards {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      flex-wrap: wrap;
+    }
+  </style>
   <body>
-    <weathernow-card></weathernow-card>
+    <div class="wrapper">
+
+
+        <div class="cards">
+          <weathernow-card></weathernow-card>
+          <weathernow-card is-active-by-default="true"></weathernow-card>
+          <weathernow-card></weathernow-card>
+
+        </div>
+        <weathernow-topbar></weathernow-topbar>
+
+    </div>
   </body>
 </html>

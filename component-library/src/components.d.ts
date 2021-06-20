@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface WeathernowCard {
+        "isActiveByDefault": boolean;
     }
     interface WeathernowCardBody {
         "test": string;
@@ -14,6 +15,8 @@ export namespace Components {
     interface WeathernowCardFooter {
     }
     interface WeathernowCardHeader {
+    }
+    interface WeathernowTopbar {
     }
 }
 declare global {
@@ -41,15 +44,23 @@ declare global {
         prototype: HTMLWeathernowCardHeaderElement;
         new (): HTMLWeathernowCardHeaderElement;
     };
+    interface HTMLWeathernowTopbarElement extends Components.WeathernowTopbar, HTMLStencilElement {
+    }
+    var HTMLWeathernowTopbarElement: {
+        prototype: HTMLWeathernowTopbarElement;
+        new (): HTMLWeathernowTopbarElement;
+    };
     interface HTMLElementTagNameMap {
         "weathernow-card": HTMLWeathernowCardElement;
         "weathernow-card-body": HTMLWeathernowCardBodyElement;
         "weathernow-card-footer": HTMLWeathernowCardFooterElement;
         "weathernow-card-header": HTMLWeathernowCardHeaderElement;
+        "weathernow-topbar": HTMLWeathernowTopbarElement;
     }
 }
 declare namespace LocalJSX {
     interface WeathernowCard {
+        "isActiveByDefault"?: boolean;
     }
     interface WeathernowCardBody {
         "test"?: string;
@@ -58,11 +69,14 @@ declare namespace LocalJSX {
     }
     interface WeathernowCardHeader {
     }
+    interface WeathernowTopbar {
+    }
     interface IntrinsicElements {
         "weathernow-card": WeathernowCard;
         "weathernow-card-body": WeathernowCardBody;
         "weathernow-card-footer": WeathernowCardFooter;
         "weathernow-card-header": WeathernowCardHeader;
+        "weathernow-topbar": WeathernowTopbar;
     }
 }
 export { LocalJSX as JSX };
@@ -73,6 +87,7 @@ declare module "@stencil/core" {
             "weathernow-card-body": LocalJSX.WeathernowCardBody & JSXBase.HTMLAttributes<HTMLWeathernowCardBodyElement>;
             "weathernow-card-footer": LocalJSX.WeathernowCardFooter & JSXBase.HTMLAttributes<HTMLWeathernowCardFooterElement>;
             "weathernow-card-header": LocalJSX.WeathernowCardHeader & JSXBase.HTMLAttributes<HTMLWeathernowCardHeaderElement>;
+            "weathernow-topbar": LocalJSX.WeathernowTopbar & JSXBase.HTMLAttributes<HTMLWeathernowTopbarElement>;
         }
     }
 }
