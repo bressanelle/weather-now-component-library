@@ -17,10 +17,10 @@
   "scripts": {
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
-    "test": "stencil test --spec",
+    "test": "jest --silent --passWithNoTests",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
-    "lint": "eslint src/**/*{.ts,.tsx}",
+    "lint": "eslint --fix 'src/**/*.+(js|json|ts|tsx|d.ts|d.spec.ts|d.e2e.ts)'",
     "prepare": "husky install"
   },
   "dependencies": {
