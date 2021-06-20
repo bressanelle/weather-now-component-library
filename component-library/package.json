@@ -21,6 +21,7 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "lint": "eslint --fix 'src/**/*.+(js|json|ts|tsx|d.ts|d.spec.ts|d.e2e.ts)'",
+    "pre-commit": "lint-staged",
     "prepare": "husky install"
   },
   "dependencies": {

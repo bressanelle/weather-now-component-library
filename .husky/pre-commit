@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-cd component-library; npm test
+cd component-library; npm run pre-commit
