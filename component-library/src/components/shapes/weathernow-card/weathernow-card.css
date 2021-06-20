@@ -1,3 +1,5 @@
-:host {
-  display: block;
+div {
+  background-color: var(--blue);
+  height: 400px;
+  width: 400px;
 }

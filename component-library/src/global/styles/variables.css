@@ -1,0 +1,14 @@
+:root {
+  --app-bg: #f1f1f1;
+  --card-footer-bg: #f1f1f1; /* remind apply .5 opacity */
+  --card-header-bg: #f1f1f1; /* remind apply .5 opacity */
+  --divider: #ebebeb;
+  --shadow: #333333; /* remind apply .1 opacity */
+
+  --sweet-grey: #b4b4b4;
+  --strong-grey: #737c84;
+
+  --blue: #69a3ff;
+  --orange: #ff9632;
+  --red: #ed1946;
+}

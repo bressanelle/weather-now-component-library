@@ -7,7 +7,7 @@ export const config: Config = {
     port: 3737,
     openBrowser: false,
   },
-  plugins: [sass()],
+  globalStyle: 'src/global/styles/variables.css',
   outputTargets: [
     {
       type: 'dist',
