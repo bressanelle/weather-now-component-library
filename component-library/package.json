@@ -1,7 +1,7 @@
 {
   "name": "component-library",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "Weather Now component library",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
   "es2015": "dist/esm/index.mjs",
@@ -16,9 +16,9 @@
   ],
   "scripts": {
     "build": "stencil build --docs",
+    "build:prod": "stencil build --prod",
     "start": "stencil build --dev --watch --serve",
     "test": "jest --silent --passWithNoTests",
-    "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "lint": "eslint --fix 'src/**/*.+(js|json|ts|tsx|d.ts|d.spec.ts|d.e2e.ts)'",
     "pre-commit": "lint-staged",
