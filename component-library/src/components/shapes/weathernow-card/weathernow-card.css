@@ -1,12 +1,14 @@
 div.card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
   background-color: #ffffff;
-  height: 350px;
-  width: 350px;
-  margin: 16px;
-  transition: width 0.6s, height 0.6s;
+  margin: 36px;
+  border-radius: 8px;
+  transition: transform 0.6s;
+  box-shadow: 3px 3px 14px var(--shadow-rgb);
 }
 
 div.card.active {
-  height: 400px;
-  width: 400px;
+  transform: scale(1.1);
 }

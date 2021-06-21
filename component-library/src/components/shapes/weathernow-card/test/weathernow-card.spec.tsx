@@ -2,6 +2,26 @@ import { newSpecPage } from '@stencil/core/testing';
 import { WeathernowCard } from '../weathernow-card';
 
 describe('weathernow-card', () => {
+  /**
+   * remove console warning "the prop x is immutable but was modified from within component"
+   * on run jest --verbose
+   */
+
+  const consoleWarnFn = console.warn;
+
+  beforeEach(async () => {
+    console.warn = (...args: any[]) => {
+      const arg1 = args[0];
+      if (typeof arg1 === 'string' && arg1.includes('stenciljs.com/docs/properties#prop-mutability')) return undefined;
+
+      consoleWarnFn(...args);
+    };
+  });
+
+  afterEach(() => {
+    console.warn = consoleWarnFn;
+  });
+
   it('it should render card', async () => {
     const page = await newSpecPage({
       components: [WeathernowCard],
@@ -95,27 +115,61 @@ describe('weathernow-card', () => {
     card.dispatchEvent(hoverEvent);
 
     expect(sut.isActiveByDefault).toBe(true);
-    expect(sut.isActive).toBe(true);
+    expect(sut.isActive).not.toBe(true);
     expect(hoverSpy).toHaveBeenCalledTimes(1);
     expect(card.classList.contains('active')).not.toBe(true);
+    expect(sut.isActive).not.toBe(true);
   });
 
-  it('it should to render slots', async () => {
+  it('it should to pass props to card-header', async () => {
     const page = await newSpecPage({
       components: [WeathernowCard],
-      html: `<weathernow-card>
-        <p slot='card-header' class='card-header'>card header</p>
-        <p slot='card-body' class='card-body'>card body</p>
-        <p slot='card-footer' class='card-footer'>card footer</p>
-      </weathernow-card>`,
+      html: `<weathernow-card></weathernow-card>`,
     });
 
-    const cardHeader = page.root.querySelector('.card-header');
-    const cardBody = page.root.querySelector('.card-body');
-    const cardFooter = page.root.querySelector('.card-footer');
+    const card = page.root.shadowRoot.querySelector('[data-testid=card]') as HTMLDivElement;
+    const cardHeader = card.firstElementChild;
+    const sut = page.rootInstance as WeathernowCard;
+    sut.location = 'Colatina, ES';
 
-    expect(cardHeader).toEqualHtml(`<p class='card-header' slot='card-header'>card header</p>`);
-    expect(cardBody).toEqualHtml(`<p class='card-body' slot='card-body'>card body</p>`);
-    expect(cardFooter).toEqualHtml(`<p class='card-footer' slot='card-footer'>card footer</p>`);
+    await page.waitForChanges();
+
+    expect(cardHeader).toEqualHtml(`<weathernow-card-header location='Colatina, ES'></weathernow-card-header>`);
+  });
+
+  it('it should to pass props to card-body', async () => {
+    const page = await newSpecPage({
+      components: [WeathernowCard],
+      html: `<weathernow-card></weathernow-card>`,
+    });
+
+    const card = page.root.shadowRoot.querySelector('[data-testid=card]') as HTMLDivElement;
+    const cardBody = card.children[1];
+    const sut = page.rootInstance as WeathernowCard;
+    sut.temperature = '10';
+    sut.temperatureColor = 'orange';
+
+    await page.waitForChanges();
+
+    expect(cardBody).toEqualHtml(`<weathernow-card-body temperature='10' temperaturecolor='orange'></weathernow-card-body>`);
+  });
+
+  it('it should to pass props to card-footer', async () => {
+    const page = await newSpecPage({
+      components: [WeathernowCard],
+      html: `<weathernow-card></weathernow-card>`,
+    });
+
+    const card = page.root.shadowRoot.querySelector('[data-testid=card]') as HTMLDivElement;
+    const cardFooter = card.lastElementChild;
+    const sut = page.rootInstance as WeathernowCard;
+    sut.isActive = true;
+    sut.lastUpdate = 'today';
+    sut.humidity = 'humidity';
+    sut.pressure = 'pressure';
+
+    await page.waitForChanges();
+
+    expect(cardFooter).toEqualHtml(`<weathernow-card-footer isactive="" pressure="pressure" humidity="humidity" lastUpdate="today"></weathernow-card-footer>`);
   });
 });

@@ -7,14 +7,30 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface WeathernowCard {
+        "error": boolean;
+        "humidity": string;
         "isActiveByDefault": boolean;
+        "lastUpdate": string;
+        "loading": boolean;
+        "location": string;
+        "pressure": string;
+        "temperature": string;
+        "temperatureColor": 'orange' | 'blue' | 'red';
     }
     interface WeathernowCardBody {
-        "test": string;
+        "error": boolean;
+        "loading": boolean;
+        "temperature": string;
+        "temperatureColor": 'red' | 'orange' | 'blue';
     }
     interface WeathernowCardFooter {
+        "humidity": string;
+        "isActive": boolean;
+        "lastUpdate": string;
+        "pressure": string;
     }
     interface WeathernowCardHeader {
+        "location": string;
     }
     interface WeathernowTopbar {
     }
@@ -60,14 +76,30 @@ declare global {
 }
 declare namespace LocalJSX {
     interface WeathernowCard {
+        "error"?: boolean;
+        "humidity"?: string;
         "isActiveByDefault"?: boolean;
+        "lastUpdate"?: string;
+        "loading"?: boolean;
+        "location"?: string;
+        "pressure"?: string;
+        "temperature"?: string;
+        "temperatureColor"?: 'orange' | 'blue' | 'red';
     }
     interface WeathernowCardBody {
-        "test"?: string;
+        "error"?: boolean;
+        "loading"?: boolean;
+        "temperature"?: string;
+        "temperatureColor"?: 'red' | 'orange' | 'blue';
     }
     interface WeathernowCardFooter {
+        "humidity"?: string;
+        "isActive"?: boolean;
+        "lastUpdate"?: string;
+        "pressure"?: string;
     }
     interface WeathernowCardHeader {
+        "location"?: string;
     }
     interface WeathernowTopbar {
     }
