@@ -1,9 +1,9 @@
 :root {
   --app-bg: #f1f1f1;
-  --card-footer-bg: #f1f1f1; /* remind apply .5 opacity */
-  --card-header-bg: #f1f1f1; /* remind apply .5 opacity */
+  --card-footer-bg: rgb(241, 241, 241, 0.5); /* footer converted to rgb */
+  --card-header-bg: #f1f1f1;
   --divider: #ebebeb;
-  --shadow: #333333; /* remind apply .1 opacity */
+  --shadow-rgb: rgb(51, 51, 51, 0.1); /* shadow converted to rgb  */
 
   --sweet-grey: #b4b4b4;
   --strong-grey: #737c84;

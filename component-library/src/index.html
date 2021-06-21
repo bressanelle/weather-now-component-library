@@ -12,36 +12,44 @@
   </head>
   <style>
     body {
-      padding: 0;
+      padding: 80px 0px 0px 0px;
       margin: 0;
     }
 
     .wrapper {
-      background: black;
-      width: 100vw;
-      height: 100vh;
+      background: #f1f1f1;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     div.cards {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100%;
+      min-height: 100%;
       flex-wrap: wrap;
     }
   </style>
   <body>
     <div class="wrapper">
-
-
-        <div class="cards">
-          <weathernow-card></weathernow-card>
-          <weathernow-card is-active-by-default="true"></weathernow-card>
-          <weathernow-card></weathernow-card>
-
-        </div>
-        <weathernow-topbar></weathernow-topbar>
-
+      <div class="cards">
+        <weathernow-card location="Nuuk, GL" loading="true" temperature-color="blue" temperature="-4°" humidity="75%" pressure="892hPa" last-update="Updated at 02:48:27 PM">
+        </weathernow-card>
+        <weathernow-card
+          is-active-by-default="true"
+          location="Urubici, BR"
+          temperature-color="orange"
+          temperature="19°"
+          humidity="75%"
+          pressure="892hPa"
+          last-update="Updated at 02:48:27 PM"
+        >
+        </weathernow-card>
+        <weathernow-card location="Nairobi, KE" temperature-color="red" temperature="31°" humidity="75%" pressure="892hPa" last-update="Updated at 02:48:27 PM"> </weathernow-card>
+      </div>
     </div>
+    <weathernow-topbar></weathernow-topbar>
   </body>
 </html>
