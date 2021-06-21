@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, h, Prop, State } from '@stencil/core';
 
 @Component({
   tag: 'weathernow-card-footer',
@@ -6,13 +6,32 @@ import { Component, Host, h } from '@stencil/core';
   shadow: true,
 })
 export class WeathernowCardFooter {
+  @Prop() pressure: string;
+  @Prop() humidity: string;
+  @Prop() lastUpdate: string;
+  @Prop() isActive: boolean;
 
-  render() {
+  renderDetails() {
     return (
-      <Host>
-        <slot></slot>
-      </Host>
+      <div class="card-footer-details">
+        <div class="detail">
+          <span>humidity</span>
+          <p>{this.humidity}</p>
+        </div>
+        <div class="detail">
+          <span>pressure</span>
+          <p>{this.pressure}</p>
+        </div>
+      </div>
     );
   }
 
+  render() {
+    return (
+      <div class={`card-footer  ${this.isActive ? 'active' : ''}`} data-testid="card-footer">
+        {this.isActive ? this.renderDetails() : ''}
+        <div class="last-update">{this.lastUpdate}</div>
+      </div>
+    );
+  }
 }
