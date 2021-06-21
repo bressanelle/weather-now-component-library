@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Fragment, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'weathernow-card-header',
@@ -6,13 +6,15 @@ import { Component, Host, h } from '@stencil/core';
   shadow: true,
 })
 export class WeathernowCardHeader {
-
+  @Prop() location: string;
   render() {
     return (
-      <Host>
-        <slot></slot>
-      </Host>
+      <Fragment>
+        <div class="card-header" data-testid="card-header">
+          <p>{this.location}</p>
+        </div>
+        <hr class="divider" />
+      </Fragment>
     );
   }
-
 }

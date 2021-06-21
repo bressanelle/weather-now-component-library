@@ -1,3 +1,21 @@
-:host {
-  display: block;
+div.card-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+div.card-header > p {
+  font-family: var(--font-family);
+  color: var(--strong-grey);
+  font-weight: 500;
+  font-size: 18px;
+}
+
+hr.divider {
+  margin: 0;
+  padding: 0;
+  border-top: 0.1px solid var(--divider);
+  opacity: 0.7;
 }
