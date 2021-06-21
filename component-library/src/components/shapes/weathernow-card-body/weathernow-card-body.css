@@ -1,3 +1,55 @@
-:host {
-  display: block;
+div.card-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 30px 0px;
+  font-family: var(--font-family);
+  flex: 2;
+  font-size: 5.6rem;
+}
+
+div.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+
+div.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  font-family: var(--font-family);
+}
+
+div.error > span {
+  color: var(--red);
+  font-size: 18px;
+}
+
+div.error > button {
+  background: #ffffff;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 50px;
+  font-weight: 400;
+  color: var(--strong-grey);
+  border: 2px solid var(--strong-grey);
+  text-transform: capitalize;
+  margin-top: 16px;
+}
+
+span.temperature-blue {
+  color: var(--blue);
+}
+
+span.temperature-red {
+  color: var(--red);
+}
+
+span.temperature-orange {
+  color: var(--orange);
 }
