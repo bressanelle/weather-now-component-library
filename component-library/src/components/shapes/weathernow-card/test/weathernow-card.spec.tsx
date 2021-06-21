@@ -172,4 +172,22 @@ describe('weathernow-card', () => {
 
     expect(cardFooter).toEqualHtml(`<weathernow-card-footer isactive="" pressure="pressure" humidity="humidity" lastUpdate="today"></weathernow-card-footer>`);
   });
+
+  it('it should prevent to render card-footer on loading or error', async () => {
+    const page = await newSpecPage({
+      components: [WeathernowCard],
+      html: `<weathernow-card></weathernow-card>`,
+    });
+
+    const card = page.root.shadowRoot.querySelector('[data-testid=card]') as HTMLDivElement;
+    const sut = page.rootInstance as WeathernowCard;
+
+    sut.loading = true;
+    sut.error = true;
+
+    await page.waitForChanges();
+
+    expect(card.childElementCount).toBe(2);
+    expect(card.lastElementChild).not.toBe(`<weathernow-card-footer></weathernow-card-footer>`);
+  });
 });

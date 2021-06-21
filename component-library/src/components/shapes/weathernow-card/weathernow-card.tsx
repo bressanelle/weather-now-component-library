@@ -22,8 +22,7 @@ export class WeathernowCard {
     this.isActive = this.isActiveByDefault ? this.isActiveByDefault : false;
   }
 
-  addActive(event: MouseEvent) {
-    const card = event.target as HTMLDivElement;
+  onAddActive(card: HTMLDivElement) {
     const alreadyContainsActiveClass = card.classList.contains('active');
     if (!alreadyContainsActiveClass) {
       card.classList.add('active');
@@ -31,15 +30,19 @@ export class WeathernowCard {
     }
   }
 
-  removeActive(event: MouseEvent) {
-    const card = event.target as HTMLDivElement;
+  onRemoveActive(card: HTMLDivElement) {
     card.classList.remove('active');
     this.isActive = false;
   }
 
   render() {
     return (
-      <div class={`card  ${this.isActive ? 'active' : ''}`} data-testid="card" onMouseEnter={event => this.addActive(event)} onMouseLeave={event => this.removeActive(event)}>
+      <div
+        class={`card  ${this.isActive ? 'active' : ''}`}
+        data-testid="card"
+        onMouseEnter={event => this.onAddActive(event.target as HTMLDivElement)}
+        onMouseLeave={event => this.onRemoveActive(event.target as HTMLDivElement)}
+      >
         <weathernow-card-header location={this.location}></weathernow-card-header>
         <weathernow-card-body error={this.error} loading={this.loading} temperature={this.temperature} temperatureColor={this.temperatureColor}></weathernow-card-body>
 
