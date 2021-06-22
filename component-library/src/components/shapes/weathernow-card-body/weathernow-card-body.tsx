@@ -17,7 +17,7 @@ export class WeathernowCardBody {
   renderLoader() {
     return (
       <div data-testid="loading" class="loading">
-        <img data-testid="loader" src={getAssetPath(`./assets/images/${this.loader}`)} alt="loading..." />;
+        <img data-testid="loader" src={getAssetPath(`./assets/${this.loader}`)} alt="loading..." />;
       </div>
     );
   }
