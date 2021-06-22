@@ -1,10 +1,9 @@
-import { Component, getAssetPath, h, Prop } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'weathernow-card-body',
   styleUrl: 'weathernow-card-body.css',
   shadow: true,
-  assetsDirs: ['assets'],
 })
 export class WeathernowCardBody {
   @Prop() temperature: string;
@@ -17,7 +16,11 @@ export class WeathernowCardBody {
   renderLoader() {
     return (
       <div data-testid="loading" class="loading">
-        <img data-testid="loader" src={getAssetPath(`./assets/${this.loader}`)} alt="loading..." />;
+        <img
+          data-testid="loader"
+          src="https://gist.githubusercontent.com/deprecat3d/7d98239740336dd1200ecc3739aff368/raw/50b30f7b9d51d3d432ecbc2a1e9131480175879a/loader.svg"
+          alt="loading..."
+        />
       </div>
     );
   }
