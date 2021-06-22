@@ -1,6 +1,6 @@
 {
-  "name": "component-library",
-  "version": "0.0.1",
+  "name": "@deprecat3d/weather-now-component-library",
+  "version": "1.0.1",
   "description": "Weather Now component library",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
@@ -18,7 +18,8 @@
     "build": "stencil build --docs",
     "build:prod": "stencil build --prod",
     "start": "stencil build --dev --watch --serve",
-    "test": "jest --silent --passWithNoTests",
+    "test": "jest --verbose --passWithNoTests",
+    "test:silent": "jest --silent --passWithNoTests",
     "generate": "stencil generate",
     "lint": "eslint --fix 'src/**/*.+(js|json|ts|tsx|d.ts|d.spec.ts|d.e2e.ts)'",
     "pre-commit": "lint-staged",
@@ -43,5 +44,14 @@
     "jest-cli": "^26.6.3",
     "lint-staged": "^11.0.0",
     "puppeteer": "^5.5.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deprecat3d/weather-now-component-library.git"
+  },
+  "author": "hiury bressanelle",
+  "bugs": {
+    "url": "https://github.com/deprecat3d/weather-now-component-library/issues"
+  },
+  "homepage": "https://github.com/deprecat3d/weather-now-component-library#readme"
 }
