@@ -11,8 +11,6 @@ export class WeathernowCardBody {
   @Prop() loading: boolean;
   @Prop() error: boolean;
 
-  private loader = 'loader.svg';
-
   renderLoader() {
     return (
       <div data-testid="loading" class="loading">
