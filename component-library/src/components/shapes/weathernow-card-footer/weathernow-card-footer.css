@@ -32,6 +32,11 @@ div.detail > p {
   font-size: 1.3rem;
 }
 
+div.detail > p > span {
+  color: var(--strong-grey);
+  font-size: 0.9rem;
+}
+
 div.last-update {
   font-size: 0.8rem;
   text-align: center;

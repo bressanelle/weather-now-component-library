@@ -1,4 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
+import { WeathernowCardBody } from '../../weathernow-card-body/weathernow-card-body';
 import { WeathernowCard } from '../weathernow-card';
 
 describe('weathernow-card', () => {

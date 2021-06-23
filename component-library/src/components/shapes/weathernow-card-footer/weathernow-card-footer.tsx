@@ -16,11 +16,17 @@ export class WeathernowCardFooter {
       <div class="card-footer-details">
         <div class="detail">
           <span>humidity</span>
-          <p>{this.humidity}</p>
+          <p>
+            {this.humidity}
+            <span>%</span>
+          </p>
         </div>
         <div class="detail">
           <span>pressure</span>
-          <p>{this.pressure}</p>
+          <p>
+            {this.pressure}
+            <span>hPa</span>
+          </p>
         </div>
       </div>
     );

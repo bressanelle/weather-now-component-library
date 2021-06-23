@@ -66,7 +66,7 @@ describe('weathernow-card-footer', () => {
     const cardFooterDetails = page.doc.querySelector('.card-footer-details');
 
     expect(cardFooterDetails.firstElementChild.classList.toString()).toBe('detail');
-    expect(cardFooterDetails.firstElementChild.lastElementChild.textContent).toBe('humidity');
-    expect(cardFooterDetails.lastElementChild.lastElementChild.textContent).toBe('pressure');
+    expect(cardFooterDetails.firstElementChild.lastElementChild.textContent).toBe('humidity%');
+    expect(cardFooterDetails.lastElementChild.lastElementChild.textContent).toBe('pressurehPa');
   });
 });

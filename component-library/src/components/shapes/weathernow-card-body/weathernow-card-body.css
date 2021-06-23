@@ -40,6 +40,7 @@ div.error > button {
   border: 2px solid var(--strong-grey);
   text-transform: capitalize;
   margin-top: 16px;
+  cursor: pointer;
 }
 
 span.temperature-blue {
@@ -52,4 +53,10 @@ span.temperature-red {
 
 span.temperature-orange {
   color: var(--orange);
+}
+
+span.symbol {
+  position: relative;
+  top: -18px;
+  font-size: 65%;
 }

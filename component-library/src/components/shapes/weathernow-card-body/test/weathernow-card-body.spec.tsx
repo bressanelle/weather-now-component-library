@@ -47,7 +47,7 @@ describe('weathernow-card-body', () => {
     await page.waitForChanges();
 
     expect(cardBody.childElementCount).toBe(1);
-    expect(cardBody.children[0].textContent).toBe('10');
+    expect(cardBody.children[0].textContent).toBe('10°');
   });
 
   it('should to render text blue', async () => {
@@ -124,5 +124,38 @@ describe('weathernow-card-body', () => {
     expect(loaderSVG).not.toBeNull();
     expect(loaderSVG.src).not.toBeNull();
     expect(loaderSVG.src).not.toBeUndefined();
+  });
+
+  it('should to render temperature symbol', async () => {
+    const page = await newSpecPage({
+      components: [WeathernowCardBody],
+      html: `<weathernow-card-body></weathernow-card-body>`,
+    });
+
+    const sut = page.rootInstance as WeathernowCardBody;
+    sut.temperature = '20';
+    await page.waitForChanges();
+
+    const spanSymbol = page.root.shadowRoot.querySelector('.symbol') as HTMLSpanElement;
+
+    expect(spanSymbol.textContent).toBe('°');
+  });
+
+  it('should emit an event when retry button is pressed', async () => {
+    const page = await newSpecPage({
+      components: [WeathernowCardBody],
+      html: `<weathernow-card-body></weathernow-card-body>`,
+    });
+
+    const buttonSpy = jest.fn();
+    const sut = page.rootInstance as WeathernowCardBody;
+    sut.error = true;
+    await page.waitForChanges();
+
+    const errorButton = page.root.shadowRoot.querySelector('[data-testid=error]') as HTMLButtonElement;
+    errorButton.addEventListener('click', buttonSpy);
+    errorButton.dispatchEvent(new Event('click'));
+
+    expect(buttonSpy).toHaveBeenCalled();
   });
 });

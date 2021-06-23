@@ -19,8 +19,7 @@ describe('weathernow-topbar', () => {
       html: `<weathernow-topbar></weathernow-topbar>`,
     });
 
-    // for test environment stencil includes http://testing.stenciljs.com/
-    const imageCorrectPath = 'http://testing.stenciljs.com/assets/images/logo.svg';
+    const imageCorrectPath = 'https://gist.githubusercontent.com/deprecat3d/7d98239740336dd1200ecc3739aff368/raw/50b30f7b9d51d3d432ecbc2a1e9131480175879a/logo.svg';
     const img = page.root.shadowRoot.querySelector('[data-testid=img]') as HTMLImageElement;
 
     expect(img.src).toEqual(imageCorrectPath);

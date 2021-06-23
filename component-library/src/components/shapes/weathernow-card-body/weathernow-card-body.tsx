@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'weathernow-card-body',
@@ -10,6 +10,8 @@ export class WeathernowCardBody {
   @Prop() temperatureColor: 'red' | 'orange' | 'blue';
   @Prop() loading: boolean;
   @Prop() error: boolean;
+
+  @Event() retryEvent?: EventEmitter;
 
   renderLoader() {
     return (
@@ -26,7 +28,7 @@ export class WeathernowCardBody {
     return (
       <div data-testid="error" class="error">
         <span>Something went wrong</span>
-        <button>Try Again</button>
+        <button onClick={() => this.retryEvent.emit()}>Try Again</button>
       </div>
     );
   }
@@ -44,6 +46,7 @@ export class WeathernowCardBody {
       <div class="card-body" data-testid="card-body">
         <span data-testid="temperature" class={`temperature-${this.temperatureColor}`}>
           {this.temperature}
+          <span class="symbol">°</span>
         </span>
       </div>
     );

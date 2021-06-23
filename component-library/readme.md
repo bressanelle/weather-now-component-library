@@ -12,7 +12,7 @@ Confesso que eu poderia tê-lo escrito diretamente em algum framework javascript
 
 Stencil tem apenas 1 dependência: Typescript.
 
-E é um compilador de web-components agnóstico de framework. Embora o projeto que consome esses componentes está escrito em Angular, poderia ser Vue, React, Svelte, ou javascript puro.
+E é um compilador de web-components agnóstico de framework. Embora o projeto que consome esses componentes esteja escrito em Angular, poderia ser Vue, React, Svelte, ou javascript puro.
 
 O ganho é justamente esse: uma biblioteca de componentes visuais que pode ser consumida por qualquer tecnologia de front-end com suporte a componentes da web.
 

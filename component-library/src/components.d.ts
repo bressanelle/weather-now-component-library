@@ -82,6 +82,7 @@ declare namespace LocalJSX {
         "lastUpdate"?: string;
         "loading"?: boolean;
         "location"?: string;
+        "onRetryEvent"?: (event: CustomEvent<string>) => void;
         "pressure"?: string;
         "temperature"?: string;
         "temperatureColor"?: 'orange' | 'blue' | 'red';
@@ -89,6 +90,7 @@ declare namespace LocalJSX {
     interface WeathernowCardBody {
         "error"?: boolean;
         "loading"?: boolean;
+        "onRetryEvent"?: (event: CustomEvent<any>) => void;
         "temperature"?: string;
         "temperatureColor"?: 'red' | 'orange' | 'blue';
     }
