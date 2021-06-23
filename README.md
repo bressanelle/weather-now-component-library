@@ -45,6 +45,13 @@ ou, numa visualização mais compacta
 
 O motor dos testes unitários é o Jest.
 
+Para rodar o projeto propriamente, execute
+
+```bash 
+  npm start
+```
+
+depois abra localhost na porta 3737. Lembrando que a visualização deste projeto apenas repesenta mocks.
 
 ## 📦 Instalação via NPM 
 
