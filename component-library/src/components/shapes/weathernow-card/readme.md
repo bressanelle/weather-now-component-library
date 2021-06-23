@@ -20,13 +20,6 @@
 | `temperatureColor`  | `temperature-color`    |             | `"blue" \| "orange" \| "red"` | `undefined` |
 
 
-## Events
-
-| Event        | Description | Type                  |
-| ------------ | ----------- | --------------------- |
-| `retryEvent` |             | `CustomEvent<string>` |
-
-
 ## Dependencies
 
 ### Depends on

@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, h, Prop, State } from '@stencil/core';
+import { Component, h, Prop, State } from '@stencil/core';
 
 @Component({
   tag: 'weathernow-card',
@@ -17,7 +17,6 @@ export class WeathernowCard {
   @Prop() error: boolean;
 
   @State() isActive: boolean;
-  @Event() retryEvent: EventEmitter<string>;
 
   componentWillLoad() {
     this.isActive = this.isActiveByDefault ? this.isActiveByDefault : false;
@@ -36,10 +35,6 @@ export class WeathernowCard {
     this.isActive = false;
   }
 
-  onRetryEvent() {
-    this.retryEvent.emit(this.location);
-  }
-
   render() {
     return (
       <div
@@ -49,13 +44,7 @@ export class WeathernowCard {
         onMouseLeave={event => this.onRemoveActive(event.target as HTMLDivElement)}
       >
         <weathernow-card-header location={this.location}></weathernow-card-header>
-        <weathernow-card-body
-          onRetryEvent={this.onRetryEvent.bind(this)}
-          error={this.error}
-          loading={this.loading}
-          temperature={this.temperature}
-          temperatureColor={this.temperatureColor}
-        ></weathernow-card-body>
+        <weathernow-card-body error={this.error} loading={this.loading} temperature={this.temperature} temperatureColor={this.temperatureColor}></weathernow-card-body>
 
         {!this.loading && !this.error ? (
           <weathernow-card-footer isActive={this.isActive} pressure={this.pressure} humidity={this.humidity} lastUpdate={this.lastUpdate}></weathernow-card-footer>

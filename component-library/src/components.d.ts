@@ -82,7 +82,6 @@ declare namespace LocalJSX {
         "lastUpdate"?: string;
         "loading"?: boolean;
         "location"?: string;
-        "onRetryEvent"?: (event: CustomEvent<string>) => void;
         "pressure"?: string;
         "temperature"?: string;
         "temperatureColor"?: 'orange' | 'blue' | 'red';
